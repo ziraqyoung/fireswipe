@@ -5,3 +5,9 @@ $navbarColor: #323738;
 body {
   margin-top: 50px;
 }
+
+@media screen and (max-width: 768px) {
+  #side-menu {
+    display: none !important;
+  }
+}
