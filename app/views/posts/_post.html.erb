@@ -1,4 +1,4 @@
-<div class="single-post-card col-md-4 mb-4 rounded" id="<%= post_path(post.id) %>">
+<div class="single-post-card p-1 col-md-4 mb-4 rounded" id="<%= post_path(post.id) %>">
   <div class="card shadow-sm">
     <div class="card-header">
       <h5 class="card-subtitle text-muted">
@@ -10,7 +10,7 @@
       <p class="card-text"><%= post.content %></p>
     </div>
     <div class="card-footer">
-      <span class="d-block"><%= post.user.name %></span>
+      <span class="font-italic d-block"><%= post.user.name %></span>
       <%= link_to "I'm interested", post_path(post), class: 'interested' %>
     </div>
   </div>
