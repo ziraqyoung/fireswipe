@@ -1,5 +1,4 @@
 $(document).on("turbolinks:load", function() {
-  console.log("testing the app...");
   if ($(".single-post-card").length) {
     if (mode == 1) {
       $(".single-post-card").each(function() {
