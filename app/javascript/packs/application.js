@@ -10,6 +10,7 @@ require("channels");
 
 import "bootstrap";
 import "../stylesheets/application.scss";
+import "@fortawesome/fontawesome-free/css/all.css";
 import "packs/pages/home";
 import "packs/pages/modal";
 
