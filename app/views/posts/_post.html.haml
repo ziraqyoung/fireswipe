@@ -1,11 +1,11 @@
 .single-post-card.p-1.col-md-4.mb-4.rounded{:id => "#{post_path(post.id)}"}
   .card.shadow-sm
     .card-header
-      %h5.card-subtitle.text-muted
+      %h5.post-text.card-subtitle.text-muted
         = truncate(post.title, length: 60 )
-    .card-body
+    .card-body.post-content
       %h3= post.title
       %p.card-text= post.content
     .card-footer
-      %span.font-italic.d-block= post.user.name
+      %span.posted-by.font-italic.d-block=post.user.name
       = link_to "I'm interested", post_path(post), class: 'interested'

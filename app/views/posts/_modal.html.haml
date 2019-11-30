@@ -1,0 +1,13 @@
+.modal.myModal.fade{ tabindex: -1, role: 'dialog', 'aria-labelledBy': 'Postmodallabel', 'aria-modal': true }
+  .modal-dialog.modal-lg{role: 'document' }
+    .modal-content
+      .modal-header
+        %h3.modal-title.posted-by
+        %button.close{type: 'button', 'data-dismiss': 'modal', 'aria-label': 'Close' }
+          %span{'arial-hidden': true } &times;
+      .modal-body.loaded-data
+        %h3
+        %p
+        %a.interested.btn.btn-primary Interested
+      .modal-footer
+        %button.btn.btn-secondary{'data-dismiss': 'modal', type: 'button' } close
