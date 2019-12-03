@@ -1,7 +1,7 @@
 .single-post-list.p-1.mb-4{id: "#{post_path(post.id)}"}
   = truncate(post.title, length: 60 )
-    .post-content
-      %h3= post.title
-      %p.card-text= post.content
-      %span.posted-by.font-italic.d-block=post.user.name
-      = link_to "I'm interested", post_path(post), class: 'interested'
+  .post-content
+    %h3= post.title
+    %p= post.content
+    %span.posted-by.font-italic.d-block=post.user.name
+    = link_to "I'm interested", post_path(post), class: 'interested'
