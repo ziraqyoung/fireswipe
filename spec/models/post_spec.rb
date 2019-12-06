@@ -11,4 +11,12 @@ RSpec.describe Post, type: :model do
       expect(association.macro).to eq(:belongs_to)
     end
   end
+
+  context 'Scopes' do
+    it 'default_scope orders posts by created_at descending' do
+      first_post = create(:post)
+      second_post = create(:post)
+      expect(Post.all).to eq [second_post, first_post]
+    end
+  end
 end
