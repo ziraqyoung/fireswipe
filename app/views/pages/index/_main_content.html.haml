@@ -1,3 +1,15 @@
 #main-content.bg-white.col.col-md-9
-  .row.p-1
-    = render @posts
+  %h3.text-center.page-name.pb-2= link_to 'Hobby', hobby_posts_path
+  .row
+    = render @hobby_posts
+    = render no_post_partial_path(@hobby_posts)
+
+  %h3.text-center.page-name.pb-2= link_to 'Study', study_posts_path
+  .row
+    = render @study_posts
+    = render no_post_partial_path(@study_posts)
+
+  %h3.text-center.page-name.pb-2= link_to 'Team', team_posts_path
+  .row
+    = render @team_posts
+    = render no_post_partial_path(@team_posts)
