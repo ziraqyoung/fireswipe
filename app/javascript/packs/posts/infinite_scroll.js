@@ -1,5 +1,4 @@
 $(document).on("turbolinks:load", function() {
-  console.log("debuggin infinite scroll...");
 
   var isLoading = false;
 
