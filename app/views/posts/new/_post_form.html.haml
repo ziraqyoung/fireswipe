@@ -1,0 +1,10 @@
+= form_for(@post) do |f|
+  .form-group
+    = f.text_field :title, placeholder: 'title of the post', maxlength: 100, minlength: 5, required: true, class: 'form-control'
+  = f.hidden_field :branch, value: @branch
+  .form-group
+    = f.text_area :content, rows: 6, minlength: 20, maxlength: 1000, required: true, placeholder: 'Describe what you are looking for. E.g. specific interests, expertise level, etc.', class: 'form-control'
+  .form-group
+    = f.collection_select :category_id, @categories, :id, :name, class: 'form-control'
+  .form-group
+    = f.submit 'Create Post', class: 'form-control'
