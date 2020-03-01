@@ -2,7 +2,6 @@ require 'rails_helper'
 # require './app/services/posts_for_branch_service.rb'
 
 describe PostsForBranchService do
-  
   context '#call' do
     let(:not_included_posts) { create_list(:post, 2) }
     let(:category) { create(:category, branch: 'hobby', name: 'arts') }

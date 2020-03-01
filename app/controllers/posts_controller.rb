@@ -18,6 +18,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    return unless user_signed_in?
+
+    @message_has_been_sent = conversation_exist?
   end
 
   def hobby
@@ -54,5 +57,9 @@ class PostsController < ApplicationController
       search: params[:search],
       category: params[:category]
     ).call
+  end
+
+  def conversation_exist?
+    Private::Conversation.between_users(current_user.id, @post.user.id).present?
   end
 end

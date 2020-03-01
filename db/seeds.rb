@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def seed_users
   10.times do |n|
     User.create(
@@ -10,10 +12,10 @@ def seed_users
 end
 
 def seed_categories
-  hobby = ['Arts', 'Crafts', 'Sports', 'Sciences', 'Collecting', 'Reading', 'Other']
+  hobby = %w[Arts Crafts Sports Sciences Collecting Reading Other]
   study = ['Arts and Humanities', 'Physical Science and Engineering', 'Math and Logic',
-          'Computer Science', 'Data Science', 'Economics and Finance', 'Business',
-          'Social Sciences', 'Language', 'Other']
+           'Computer Science', 'Data Science', 'Economics and Finance', 'Business',
+           'Social Sciences', 'Language', 'Other']
   team = ['Study', 'Development', 'Arts and Hobby', 'Other']
 
   hobby.each do |name|
@@ -31,7 +33,6 @@ end
 
 def seed_posts
   categories = Category.all
-
   categories.each do |category|
     5.times do
       Post.create(

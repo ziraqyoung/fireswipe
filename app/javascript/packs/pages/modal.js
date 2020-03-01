@@ -3,6 +3,7 @@ $(document).on("turbolinks:load", function() {
     var posted_by = $(this)
       .find(".card-footer .posted-by")
       .html();
+
     var post_heading = $(this)
       .find(".post-content h3")
       .html();
