@@ -1,0 +1,5 @@
+%form.send-private-message
+  %input{name: 'conversation_id', type: 'hidden', value: conversation.id }
+  %input{name: 'user_id', type: 'hidden', value: user.id }
+  %textarea.form-control{name: 'body', rows: 3, placeholder: 'Type a message....' }
+  %input.btn.btn-success.send-message(type="submit")

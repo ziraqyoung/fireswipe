@@ -1,0 +1,2 @@
+- private_conversations_windows.each do |conversation|
+  = render partial: 'private/conversations/conversation', local: { conversation: conversation, user: current_user}

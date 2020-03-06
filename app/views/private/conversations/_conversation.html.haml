@@ -1,0 +1,8 @@
+- @recipient = private_conv_recipient(conversation)
+- @is_message = false
+%li.conversation-window{ id: "pc#{conversation.id}", data: { 'pconversation-user-name': @recipient.name, 'turbolinks-permanent': true } }
+  .panel.panel-default{data: { 'pconversation-id': conversation.id }}
+    = render 'private/conversations/conversation/heading', conversation: conversation
+    .panel-body
+      = render 'private/conversations/conversation/message_list', conversation: conversation
+      = render 'private/conversations/conversation/new_message_form', conversation: conversation, user: user

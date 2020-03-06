@@ -1,0 +1,2 @@
+require('./home');
+require('./modal');

@@ -1,7 +1,9 @@
-@import "~bootstrap/scss/bootstrap";
-@import "./posts//branch_pages.scss";
-
 $navbarColor: #323738;
+$backgroundColor: #f0f0f0;
+
+@import "~bootstrap/scss/bootstrap";
+@import "./posts/branch_pages.scss";
+@import "./posts/conversations.scss";
 
 body {
   margin-top: 50px;

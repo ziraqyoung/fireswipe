@@ -37,8 +37,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-
- # Adds support for Capybara system testing and selenium driver
+  gem 'pry-rails'
+  # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_bot_rails'
@@ -46,7 +46,7 @@ group :development, :test do
   gem 'headless'
   gem 'poltergeist'
   gem 'database_cleaner'
-  
+  # easily debug errors
   gem 'better_errors'
   gem 'binding_of_caller'
 end
@@ -59,7 +59,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-rspec', require: false
-
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do

@@ -37,29 +37,29 @@ class PostsController < ApplicationController
 
   private
 
-  def post_params
-    params.require(:post).permit(:title, :content, :category_id).merge(user_id: current_user.id)
-  end
-
-  def posts_for_branch(branch)
-    @categories = Category.where(branch: branch)
-    @posts = fetch_posts.paginate(page: params[:page])
-
-    respond_to do |format|
-      format.html
-      format.js { render partial: 'posts/posts_pagination_page' }
+    def post_params
+      params.require(:post).permit(:title, :content, :category_id).merge(user_id: current_user.id)
     end
-  end
 
-  def fetch_posts
-    PostsForBranchService.new(
-      branch: params[:action],
-      search: params[:search],
-      category: params[:category]
-    ).call
-  end
+    def posts_for_branch(branch)
+      @categories = Category.where(branch: branch)
+      @posts = fetch_posts.paginate(page: params[:page])
 
-  def conversation_exist?
-    Private::Conversation.between_users(current_user.id, @post.user.id).present?
-  end
+      respond_to do |format|
+        format.html
+        format.js { render partial: 'posts/posts_pagination_page' }
+      end
+    end
+
+    def fetch_posts
+      PostsForBranchService.new(
+        branch: params[:action],
+        search: params[:search],
+        category: params[:category]
+      ).call
+    end
+
+    def conversation_exist?
+      Private::Conversation.between_users(current_user.id, @post.user.id).present?
+    end
 end

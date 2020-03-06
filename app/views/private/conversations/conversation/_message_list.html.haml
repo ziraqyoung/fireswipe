@@ -1,0 +1,6 @@
+.messages-list
+  = render load_private_messages(conversation), conversation: conversation
+  .load-more-messages
+    %i.fa.fa-spinner{"aria-hidden": true}
+  -# messages
+  %ul

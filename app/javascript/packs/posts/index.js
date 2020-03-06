@@ -1,0 +1,1 @@
+require('./infinite_scroll');
