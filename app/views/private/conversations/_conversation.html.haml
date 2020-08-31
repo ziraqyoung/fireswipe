@@ -1,6 +1,6 @@
 - @recipient = private_conv_recipient(conversation)
 - @is_message = false
-%li.conversation-window{ id: "pc#{conversation.id}", data: { 'pconversation-user-name': @recipient.name, 'turbolinks-permanent': true } }
+%li.conversation-window.bg-white{ id: "pc#{conversation.id}", data: { 'pconversation-user-name': @recipient.name, 'turbolinks-permanent': true } }
   .panel.panel-default{data: { 'pconversation-id': conversation.id }}
     = render 'private/conversations/conversation/heading', conversation: conversation
     .panel-body

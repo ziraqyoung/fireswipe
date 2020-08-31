@@ -19,7 +19,7 @@ $(document).on('turbolinks:load', function() {
 })
 
 
-function positionChatWindows() {
+window.positionChatWindows = function () {
   chat_windows_count =  $('.conversation-window').length;
   // if a new conversation window is added
   // set it as the last visible conversation window
@@ -35,7 +35,7 @@ function positionChatWindows() {
   for(i=0; i < chat_windows_count; i++) {
     var right_position = i * 410;
     var chat_window = i + 1;
-    $('.conversation-window:nth-of-type(' + chat_window + ')').css('right', '' + right_position + 'px');
+    $(`.conversation-window:nth-of-type(${chat_window})`).css('right', '' + right_position + 'px');
   }
 }
 

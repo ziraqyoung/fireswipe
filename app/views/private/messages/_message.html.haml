@@ -1,0 +1,5 @@
+= private_messages_date_check(message, previous_message), locals: { message: messages }
+%li{title: message.created_at.to_s(:date) }
+  .row
+    %div{ class: "#{sent_or_received(message, user)} #{seen_or_unseen(message)}" }
+      = message.body
